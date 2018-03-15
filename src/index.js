@@ -13,10 +13,11 @@ const fetchQuote = () => (
 const Quote = Coroutine.create(async function * ({ update }) {
   yield (<div>Loading quote…</div>)
 
-  await delay(1000)
-
   try {
     const { quote, author } = await fetchQuote()
+
+    await delay(1000)
+
     return (
       <div>
         <p>“{quote}” – {author}</p>
